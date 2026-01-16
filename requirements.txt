@@ -1,0 +1,7 @@
+numpy
+opencv-python
+matplotlib
+seaborn
+scikit-learn
+joblib
+tensorflow==2.17.0  # or your TF version

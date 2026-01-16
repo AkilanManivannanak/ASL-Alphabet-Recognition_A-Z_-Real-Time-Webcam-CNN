@@ -1,0 +1,35 @@
+# --- Virtual environments ---
+.venv/
+venv/
+
+# --- Python cache ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# --- macOS ---
+.DS_Store
+**/.DS_Store
+
+# --- Large artifacts (do NOT commit) ---
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.tflite
+*.pkl
+*.joblib
+*.zip
+*.tar
+*.tar.gz
+
+# --- Datasets (do NOT commit raw) ---
+Data/
+data/
+datasets/
