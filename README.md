@@ -1,3 +1,4 @@
+![Cover](A-Z_Cover.png)
 # ASL Alphabet Recognition (A–Z) — Real-Time Webcam CNN (TensorFlow/Keras)
 
 A production-style computer vision project that trains a **Convolutional Neural Network (CNN)** to recognize **American Sign Language (ASL) fingerspelling letters A–Z** from hand images and runs **real-time inference** on a webcam feed with on-screen predictions + confidence.
