@@ -1,4 +1,6 @@
 import os
+import random
+
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,6 +8,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 import seaborn as sns
 from tensorflow.keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
 from tensorflow.keras.models import load_model
+import tensorflow as tf
 
 from data_utils import prepare_datasets, create_generators, IMG_SIZE
 from model_utils import build_cnn
@@ -16,6 +19,15 @@ TRAIN_DIR = os.path.join(DATA_DIR, "train")
 TEST_DIR = os.path.join(DATA_DIR, "test")
 MODELS_DIR = os.path.join(BASE_DIR, "models")
 os.makedirs(MODELS_DIR, exist_ok=True)
+
+SEED = 42
+
+
+def set_seed(seed=SEED):
+    """Seed Python, NumPy and TensorFlow (augmentation and weight init) for repeatable runs."""
+    random.seed(seed)
+    np.random.seed(seed)
+    tf.random.set_seed(seed)
 
 def plot_history(history, out_dir):
     plt.figure(figsize=(12, 4))
@@ -39,6 +51,7 @@ def plot_history(history, out_dir):
     plt.close()
 
 def main():
+    set_seed()
     (X_train, y_train,
      X_val, y_val,
      X_test, y_test,
