@@ -9,12 +9,13 @@ from data_utils import IMG_SIZE
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODELS_DIR = os.path.join(BASE_DIR, "models")
 
-MODEL_PATH = os.path.join(MODELS_DIR, "best_sign_model.h5")
+MODEL_PATH = os.path.join(MODELS_DIR, "best_sign_model.keras")
+LEGACY_MODEL_PATH = os.path.join(MODELS_DIR, "best_sign_model.h5")  # models trained before the .keras switch
 ENCODER_PATH = os.path.join(MODELS_DIR, "label_encoder.joblib")
 ROI_FRACTION = 0.6  # side of the centred hand box, as a fraction of the shorter frame side
 
 def main():
-    model = load_model(MODEL_PATH)
+    model = load_model(MODEL_PATH if os.path.exists(MODEL_PATH) else LEGACY_MODEL_PATH)
     encoder = joblib.load(ENCODER_PATH)
     class_names = encoder.classes_
 
