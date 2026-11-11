@@ -77,7 +77,7 @@ sign_language_project/
     train/        # A–Z folders (training source)
     test/         # A–Z folders (held-out evaluation)
   models/
-    best_sign_model.h5
+    best_sign_model.keras
     label_encoder.joblib
     training_curves.png
     confusion_matrix.png
@@ -120,7 +120,7 @@ python src/train.py
 
 This exports:
 
-- models/best_sign_model.h5
+- models/best_sign_model.keras (native Keras format; an older best_sign_model.h5 still loads)
 - models/label_encoder.joblib
 - models/training_curves.png
 - models/confusion_matrix.png

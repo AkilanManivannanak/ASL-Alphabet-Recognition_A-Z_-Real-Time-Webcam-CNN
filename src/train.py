@@ -68,7 +68,7 @@ def main():
     model = build_cnn(input_shape=(IMG_SIZE, IMG_SIZE, 1),
                       num_classes=num_classes, lr=1e-3)
 
-    checkpoint_path = os.path.join(MODELS_DIR, "best_sign_model.h5")
+    checkpoint_path = os.path.join(MODELS_DIR, "best_sign_model.keras")  # native Keras 3 format
     checkpoint = ModelCheckpoint(
         checkpoint_path,
         monitor="val_accuracy",
