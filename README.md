@@ -129,8 +129,8 @@ This exports:
 
 python src/inference_webcam.py
 
-- A webcam window opens
-- Show an ASL letter (A–Z) in frame
+- A webcam window opens (mirrored) with a box in the centre
+- Show an ASL letter (A–Z) inside the box; only the box is classified
 - The predicted letter + confidence is displayed on-screen
 Press q to quit. or ctrl c
 
