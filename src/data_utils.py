@@ -34,7 +34,7 @@ def load_data_dir(data_dir, allowed_classes=None):
     return data, labels
 
 def prepare_datasets(train_dir, test_dir, val_size=0.15, random_state=42):
-    # Load train first to determine which classes exist (A–M in this dataset)
+    # Load train first to determine which classes exist (one folder per letter)
     X_train_full, y_train_full = load_data_dir(train_dir)
     train_classes = sorted(list(set(y_train_full)))
 
