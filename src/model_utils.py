@@ -3,7 +3,7 @@ from tensorflow.keras.layers import (Conv2D, MaxPooling2D, Flatten, Dense,
                                      Dropout, BatchNormalization)
 from tensorflow.keras.optimizers import Adam
 
-def build_cnn(input_shape=(64, 64, 1), num_classes=13, lr=1e-3):
+def build_cnn(input_shape=(64, 64, 1), num_classes=26, lr=1e-3):
     model = Sequential([
         Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=input_shape),
         BatchNormalization(),
